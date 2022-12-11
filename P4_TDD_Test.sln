@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P4_TDD_Test", "P4_TDD_Test\P4_TDD_Test.csproj", "{59486C52-CE8D-46DC-8D75-45117B500864}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDD_Test", "TDD_Test\TDD_Test.csproj", "{764CC3D6-30D2-468D-A207-68773C8F6390}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59486C52-CE8D-46DC-8D75-45117B500864}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59486C52-CE8D-46DC-8D75-45117B500864}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59486C52-CE8D-46DC-8D75-45117B500864}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59486C52-CE8D-46DC-8D75-45117B500864}.Release|Any CPU.Build.0 = Release|Any CPU
+		{764CC3D6-30D2-468D-A207-68773C8F6390}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{764CC3D6-30D2-468D-A207-68773C8F6390}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{764CC3D6-30D2-468D-A207-68773C8F6390}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{764CC3D6-30D2-468D-A207-68773C8F6390}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {478EAC0D-891E-4140-BCC4-C0B7C87FFD5D}
+	EndGlobalSection
+EndGlobal
