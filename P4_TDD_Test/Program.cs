@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace P4_TDD_Test {
     class Program {
-        static void Main(string[] args) {
+        static void Main() {
             /*BinaryTree binaryTree = new BinaryTree();
             Console.WriteLine(binaryTree.IsNull());
             BinaryTree binaryTree2 = new BinaryTree(10);
@@ -42,10 +43,72 @@ namespace P4_TDD_Test {
             binaryTree.Insert(17);*/
 
             for (int i = 0; i < 25; i++) {
-                binaryTree.Insert(new Random().Next(1, 200));
+                binaryTree.Insert(new Random().Next(1, 500));
             }
 
             binaryTree.DisplayTree();
+
+            Console.WriteLine(binaryTree.IsNull());
+            binaryTree.ClearTree();
+            Console.WriteLine(binaryTree.IsNull());
+            Console.WriteLine("------------------------------------------------------------------------------");
+
+            for (int i = 0; i < 25; i++) {
+                binaryTree.Insert(new Random().Next(1, 500));
+            }
+            binaryTree.DisplayTree();
+
+            Console.WriteLine($"Min value in tree: {binaryTree.FindMinValue()}");
+            Console.WriteLine($"Max value in tree: {binaryTree.FindMaxValue()}");
+
+            //binaryTree.SortBinaryTree(,"ASC");
+
+            BinaryTree binaryTree2 = new BinaryTree();
+            var list = new List<int> { 4, 6, 5, 3, 2, 1, };
+            var test = binaryTree2.SortBinaryTree(list, "ASC");
+            foreach (var item in test) {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine();
+            var test2 = binaryTree2.SortBinaryTree(list, "DESC");
+            foreach (var item in test) {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine();
+
+            BinaryTree binaryTree3 = new BinaryTree();
+            var list2 = new List<int> { 8, 3, 10, 1, 6, 14, 4, 7, 13 };
+            foreach (var item in list2) {
+                binaryTree3.Insert(item);
+            }
+            Console.WriteLine(binaryTree3.FindPathToValue(13));
+            Console.WriteLine(binaryTree3.FindPathToValue(8));
+            Console.WriteLine(binaryTree3.FindPathToValue(1));
+            Console.WriteLine(binaryTree3.FindPathToValue(0));
+            Console.WriteLine(binaryTree3.FindPathToValue(15));
+            Console.WriteLine(binaryTree3.FindPathToValue(4));
+            Console.WriteLine(binaryTree3.FindPathToValue(9));
+            Console.WriteLine(binaryTree3.FindPathToValue(14));
+            Console.WriteLine(binaryTree3.FindPathToValue(100));
+            
+            Console.WriteLine();
+            binaryTree3.DisplayTree();
+
+            Console.WriteLine("------------------------------------------------------------------------------"); 
+            binaryTree3.RemoveValue(14);
+            binaryTree3.DisplayTree();
+
+            Console.WriteLine("------------------------------------------------------------------------------");
+            binaryTree3.RemoveValue(6);
+            binaryTree3.DisplayTree();
+
+            Console.WriteLine("------------------------------------------------------------------------------");
+            binaryTree3.RemoveValue(8);
+            binaryTree3.DisplayTree();
+
+            Console.WriteLine("------------------------------------------------------------------------------");
+            binaryTree3.RemoveValue(7);
+            binaryTree3.DisplayTree();
         }
     }
-}
+}   
