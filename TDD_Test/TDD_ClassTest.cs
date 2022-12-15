@@ -152,16 +152,8 @@ namespace TDD_Test {
         [Test]
         public void RemoveValue_EmptyTree_ShouldBeCorrect() {
             BinaryTree binaryTree = new BinaryTree();
-            var list = new List<int> { 8, 3, 10, 1, 6, 14, 4 };
-            foreach (var item in list) {
-                binaryTree.Insert(item);
-            }
-
             binaryTree.RemoveValue(3);
-            var result = binaryTree.SortBinaryTree(list, "ASC");
-            var exceptedResult = new List<int> { 8, 4, 10, 1, 6, 14 };
-            Assert.AreNotEqual(result, exceptedResult);
-            Assert.AreNotEqual(binaryTree.GetTree(), null);
+            Assert.AreEqual(binaryTree.GetTree(), null);
         }
 
         [Test]

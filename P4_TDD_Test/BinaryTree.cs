@@ -137,6 +137,7 @@ namespace P4_TDD_Test {
             if(_root == null) {
                 return "Empty tree";
             }
+            // used in console app
             //return $"Path to value {value} : {FindPathToValue(_root, value, ".")}";
             return FindPathToValue(_root, value, ".");
         }
@@ -174,6 +175,7 @@ namespace P4_TDD_Test {
         }
 
         public void RemoveValue(int value) {
+            if (_root == null) return;
             _root = RemoveValue(_root, value);
         }
 
