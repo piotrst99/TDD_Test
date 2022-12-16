@@ -5,6 +5,7 @@ using System.Collections.Generic;
 namespace TDD_Test {
     [TestFixture]
     public class TDD_Test_Project {
+        // metoda testujaca tworzenie drzewa binarnego i sprawdza czy jest pusta
         [Test]
         public void CreateBinaryTree_ShouldBeNull() {
             BinaryTree binaryTree = new BinaryTree();
@@ -12,6 +13,7 @@ namespace TDD_Test {
             Assert.AreEqual(result, true);
         }
 
+        // metoda testujaca tworzenie drzewa binarnego, dodaje element i sprawdza czy nie jest pusta
         [Test]
         public void CreateBinaryTree_ShouldNotBeNull() {
             BinaryTree binaryTree = new BinaryTree();
@@ -21,6 +23,7 @@ namespace TDD_Test {
             Assert.AreNotEqual(result, true);
         }
 
+        // metoda testujaca wyszukanie minimalnej wartosci w drzewie
         [Test]
         public void FindMinValue_ShouldBeCorrect() {
             BinaryTree binaryTree = new BinaryTree();
@@ -30,6 +33,7 @@ namespace TDD_Test {
             Assert.AreEqual(result, 1);
         }
 
+        // metoda testujaca wyszukanie maksymalnej wartosci w drzewie
         [Test]
         public void FindPathToValue_ShouldBeCorrect() {
             BinaryTree binaryTree = new BinaryTree();

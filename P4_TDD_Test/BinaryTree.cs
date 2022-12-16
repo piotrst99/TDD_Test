@@ -5,22 +5,30 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace P4_TDD_Test {
+    // klasa reprezentująca drzewo binarne
     public class BinaryTree {
+        // obiekt reprezentujący root drzewa
         private Node _root { get; set; }
+
+        // lista przechowyjąca posortowane wartości
         private List<int> list = new List<int>();
 
+        // konstruktor  tworzący drzewo binarne
         public BinaryTree() {
             _root = null;
         }
 
+        // metoda, czyszczaca drzewo w całości
         public void ClearTree() {
             _root = null;
         }
 
+        // metoda zwraca informacje, czy jest puste
         public bool IsNull() {
             return _root == null;
         }
 
+        // publiczna metoda do wstawiania elementu
         public void Insert(int value) {
             if (_root == null) {
                 _root = new Node(value);
@@ -30,6 +38,8 @@ namespace P4_TDD_Test {
             InsertData(_root, value);
         }
 
+        // prywatna metoda to rekurencyjnego wstawiania elementu do drzewa binarnego
+        // wykonujaca sie rekurencyjnie
         private void InsertData(Node parent, int value) {
             if (parent == null) {
                 parent = new Node(value);
@@ -52,6 +62,7 @@ namespace P4_TDD_Test {
             }
         }
 
+        // metoda zwracajaca minimalna wartosc drzewa binarnego, po wartosci
         public int? FindMinValue() {
             if(_root == null) {
                 return null;
@@ -66,6 +77,7 @@ namespace P4_TDD_Test {
             return currentNode.Data;
         }
 
+        // metoda zwracajaca minimalna wartosc drzewa binarnego, po galezi
         public int? FindMinValue(Node node) {
             Node currentNode = node;
 
@@ -76,6 +88,7 @@ namespace P4_TDD_Test {
             return currentNode.Data;
         }
 
+        // metoda zwracajaca maksymalna wartosc drzewa binarnego, po wartości
         public int? FindMaxValue() {
             if (_root == null) {
                 return null;
@@ -90,6 +103,7 @@ namespace P4_TDD_Test {
             return currentNode.Data;
         }
 
+        // funkcja, ktora zwraca posortowane drzewo do listy, wskazujac typ
         public List<int> SortBinaryTree(List<int> listToSort, string type) {
             if (listToSort.Count == 0 || listToSort == null) {
                 return null;
@@ -106,14 +120,18 @@ namespace P4_TDD_Test {
             return list;
         }
 
+        // funkcja zwracajaca całe drzewo
         public Node GetTree() {
             return _root;
         }
 
+        // publiczna metoda sortujaca drzewo po rodzaju sortowania
         public void SortTree(string type) {
             SortTreeData(_root, type);
         }
 
+        // prywatna metoda sortujaca drzewo, po galezi oraz rodzaju sortowania
+        // wykonujaca sie rekurencyjnie
         private void SortTreeData(Node node, string type) {
             if (node == null) return;
             
@@ -133,6 +151,7 @@ namespace P4_TDD_Test {
             }
         }
 
+        // publiczna meoda zwracajaca sciezke do pierwszego wystapienia wartosci w drzewie binarnym
         public string FindPathToValue(int value) {
             if(_root == null) {
                 return "Empty tree";
@@ -142,6 +161,8 @@ namespace P4_TDD_Test {
             return FindPathToValue(_root, value, ".");
         }
 
+        // prywatna meoda zwracajaca sciezke do pierwszego wystapienia wartosci w drzewie binarnym oraz podaniu galezi
+        // wykonujaca sie rekurencyjnie
         private string FindPathToValue(Node node, int value, string path) {
             if (_root != null) {
                 if(value == node.Data) {
@@ -166,19 +187,25 @@ namespace P4_TDD_Test {
             return path;
         }
 
+        // publiczna metoda zwracajaca glebokosc drzewa
         public int GetTreeDepth() {
             return GetTreeDepth(_root);
         }
 
+        // prywatna metoda zwracajaca glebokosc drzewa
+        // wykonujaca sie rekurencyjnie
         private int GetTreeDepth(Node node) {
             return node == null ? 0 : Math.Max(GetTreeDepth(node.LeftNode), GetTreeDepth(node.RightNode)) + 1;
         }
 
+        // usuwanie galezi
         public void RemoveValue(int value) {
             if (_root == null) return;
             _root = RemoveValue(_root, value);
         }
 
+        // prywatna metoda usuwajaca i podstawijaca element estatni element z galezi podrzednej
+        // wykonujaca sie rekurencyjnie
         private Node RemoveValue(Node node, int value) {
             if(node == null) {
                 return node;

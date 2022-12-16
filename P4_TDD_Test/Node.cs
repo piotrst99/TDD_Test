@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace P4_TDD_Test {
+    // klasa opisujaca obiejt jako gałaz
     public class Node {
         public Node LeftNode { get; set; }
         public Node RightNode { get; set; }
